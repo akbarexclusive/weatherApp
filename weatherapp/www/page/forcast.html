@@ -1,0 +1,37 @@
+<div ng-repeat="w in wetherResult.list |limitTo:1">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Weather Forcast for {{ city }} for next {{day}} Days</h1>
+    </div>
+</div>
+<div ng-repeat="w in wetherResult.list">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="badge"><h3 class="panel-title">{{ convertToDate(w.dt) | date: 'MMM d,y' }}</h3></div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Current Temprature : {{ convetTo(w.temp.day)}} &degC <!-- for degree symbol alt + 0176 or &deg-->
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        Minimum Temprature  : {{ convetTo(w.temp.min)}} &degC
+                    </div>
+                </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        Maximun Temprature : {{ convetTo(w.temp.max)}} &degC
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        Weather Status : {{ w.weather[0].description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
